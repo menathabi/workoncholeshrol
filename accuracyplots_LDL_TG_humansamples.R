@@ -163,11 +163,8 @@ ACP+ ylab("Accuracy, %")+
   
   scale_color_viridis(discrete = TRUE)+
   theme_ipsum()+
-  #scale_fill_brewer(palette = "PuRd")+
   scale_fill_manual(values = c("#1A237E","#1976D2","#B3E5fC"))+
-  #scale_fill_manual(values = c("#FCEAE6","#F0A58F","#EA7369","#EB548C","#DB4CB2","#AF4BCE","#7D3AC1"))+
   scale_y_continuous(breaks = seq(0,100,by=10))+
-  #scale_fill_discrete("Species",labels=c(expression(italic("Myrmica aimonissabaudiae")),expression(italic("Myrmica cachmiriensis")),expression(italic("Myrmica hecate")),expression(italic("Myrmica inezae")),expression(italic("Myrmica sp.")),expression(italic("Myrmica wardi")),"Non-myrmica"))+
   theme(axis.title.x.bottom = element_text(color="#142459",hjust = 0.5, size=10, face="bold",family = "TT Times New Roman"),
         axis.title.y = element_text(color="#142459", size=10,hjust = 0.5, face="bold",family ="TT Times New Roman"),
         axis.text.y = element_text(size=9,face = "bold",color = "black", angle=0,family ="TT Times New Roman" ),
@@ -181,8 +178,6 @@ ACP+ ylab("Accuracy, %")+
 
 
 ############# TG ##############
-
-#setwd("C:/Users/abira/OneDrive/Desktop/Reshma work")
 
 library("png")
 library("vegan")
@@ -203,11 +198,6 @@ library(dplyr)
 library(patchwork)
 library(hrbrthemes)
 
-
-library(readxl)
-AC<- 
-View(AC)
-
 unique(sort(AC$TG))
 
 AC$TG <- factor(AC$TG, levels = c( "300-399","400-499", "500-599", ">599"))
@@ -218,18 +208,12 @@ library(extrafont)
 ACPL <-ggplot(AC, aes(fill=Method, x=factor(TG, level=c("300-399","400-499", "500-599", ">599")),y=Accuracy))+
   geom_bar(stat = "identity",position = "dodge", width = 0.8)
 
-#ACPL <-ggplot(AC, aes(fill=Methods, x=TG,y=Accuracy))+
- # geom_bar(stat = "identity",position = "dodge", width = 0.8)
-
 ACPL+ ylab("Accuracy, %")+
   xlab("Triglycerides, mg/dL")+
   scale_color_viridis(discrete = TRUE)+
   theme_ipsum()+
-  #scale_fill_brewer(palette = "PuRd")+
   scale_fill_manual(values = c("#1A237E","#1976D2","#B3E5fC"))+
-  #scale_fill_manual(values = c("#FCEAE6","#F0A58F","#EA7369","#EB548C","#DB4CB2","#AF4BCE","#7D3AC1"))+
   scale_y_continuous(breaks = seq(0,100,by=10))+
-  #scale_fill_discrete("Species",labels=c(expression(italic("Myrmica aimonissabaudiae")),expression(italic("Myrmica cachmiriensis")),expression(italic("Myrmica hecate")),expression(italic("Myrmica inezae")),expression(italic("Myrmica sp.")),expression(italic("Myrmica wardi")),"Non-myrmica"))+
   theme(axis.title.x.bottom = element_text(color="#142459",hjust = 0.5, size=10, face="bold",family = "TT Times New Roman"),
         axis.title.y = element_text(color="#142459", size=10,hjust = 0.5, face="bold",family ="TT Times New Roman"),
         axis.text.y = element_text(size=9,face = "bold",color = "black", angle=0,family ="TT Times New Roman" ),
