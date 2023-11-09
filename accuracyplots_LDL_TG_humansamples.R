@@ -115,7 +115,7 @@ lower.bound <- MSS- margin.error
 upper.bound <- MSS+ margin.error
 print(c(lower.bound,upper.bound))
 
-######################## Accuracy Plot###############
+######################## Accuracy Plot (Grouped bar plots)###############
 
 ######### LDL cholesterol ###########
 
